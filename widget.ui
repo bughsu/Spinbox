@@ -16,24 +16,46 @@
   <widget class="QSpinBox" name="spinBox">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>250</y>
+     <x>170</x>
+     <y>280</y>
      <width>42</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="minimum">
+    <number>-100</number>
+   </property>
+   <property name="maximum">
+    <number>100</number>
    </property>
   </widget>
   <widget class="QSlider" name="horizontalSlider">
    <property name="geometry">
     <rect>
-     <x>400</x>
-     <y>260</y>
+     <x>360</x>
+     <y>270</y>
      <width>160</width>
      <height>22</height>
     </rect>
    </property>
+   <property name="minimum">
+    <number>-100</number>
+   </property>
+   <property name="maximum">
+    <number>100</number>
+   </property>
    <property name="orientation">
     <enum>Qt::Orientation::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="lcdNumber">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>360</y>
+     <width>64</width>
+     <height>23</height>
+    </rect>
    </property>
   </widget>
  </widget>
@@ -46,8 +68,8 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>157</x>
-     <y>259</y>
+     <x>197</x>
+     <y>289</y>
     </hint>
     <hint type="destinationlabel">
      <x>405</x>
@@ -66,8 +88,24 @@
      <y>271</y>
     </hint>
     <hint type="destinationlabel">
-     <x>159</x>
-     <y>262</y>
+     <x>199</x>
+     <y>292</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>382</x>
+     <y>282</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>317</x>
+     <y>368</y>
     </hint>
    </hints>
   </connection>
